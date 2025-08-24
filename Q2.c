@@ -25,7 +25,17 @@ int main()
     sum=a+b;
     diff=a-b;
     prod=a*b;
-    quo=a/b;
-    printf("Sum = %d ,Diff = %d ,Product =%d,Quotient =%d",sum,diff,prod,quo);
+     printf("Sum = %d ,Diff = %d ,Product =%d",sum,diff,prod);
+    // Division with zero check
+    if (b != 0) 
+    {
+        quo = a / b;
+        printf(", Quotient = %d\n", quo);
+    } 
+    else {
+        printf(",Quotient = Undefined (division by zero)\n");
+    }
+    
+   
       
 }
