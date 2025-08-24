@@ -22,5 +22,5 @@ int main()
     scanf("%f",&celsius);
     fahrenheit=(celsius*9/5)+32;
     printf("Fahrenheit=%f",fahrenheit);
-    
+    return 0;
 }

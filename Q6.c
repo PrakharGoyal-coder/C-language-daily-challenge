@@ -27,4 +27,5 @@ int main()
     a=b;
     b=t;
     printf("After swap:%d  %d",a,b);
+    return 0;
 }

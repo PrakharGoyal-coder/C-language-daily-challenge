@@ -22,5 +22,5 @@ int main()
     area=3.141592*radius*radius;
     circumference=2*3.141592*radius;
     printf("Area=%.2f , Circumference=%.2f",area,circumference);
-
+    return 0;
 }
