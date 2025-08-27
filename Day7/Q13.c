@@ -49,4 +49,5 @@ int main()
     {
         printf("Not a leap year");
     }
+    return 0;
 }
