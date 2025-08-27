@@ -1,1 +1,38 @@
+//Q9: Write a program to calculate simple and compound interest for given principal, rate, and time.
 
+/*
+Sample Test Cases:
+Input 1:
+1000 5 2
+Output 1:
+Simple Interest=100, Compound Interest=102.5
+
+Input 2:
+5000 7 3
+Output 2:
+Simple Interest=1050, Compound Interest=1125.76
+
+*/
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    float p,r,t; // p=principal amt r=rate of interest p.a.  t=time in years
+    //inputṇ
+    printf("enter the principal amount:");
+    scanf("%f",&p);
+    
+    printf("enter the rate of interest p.a.:");
+    scanf("%f",&r);
+
+    printf("enter the time in years:");
+    scanf("%f",&t);
+
+    float si,ci;//si->simple interest  ci->compoud interest
+    si=p*r*t/100;
+    float amt=p*pow((1+(r/100)),t);   //amt=amt+ci
+    ci=amt-p;
+    //printing result
+    printf("simple interest=%.2f, compound interest=%.2f\n",si,ci);
+    return 0;
+}
