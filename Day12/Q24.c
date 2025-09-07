@@ -1,5 +1,8 @@
 //Q24: Write a program to calculate an electricity bill based on units consumed.
-
+//First 100 units at ₹5/unit
+// Next 100 units at ₹7/unit
+// Next 100 units at ₹10/unit
+// Above at ₹12/unit
 /*
 Sample Test Cases:
 Input 1:
@@ -10,12 +13,12 @@ Bill: ₹250
 Input 2:
 150
 Output 2:
-Bill: ₹950
+Bill: ₹850
 
 Input 3:
 250
 Output 3:
-Bill: ₹2200
+Bill: ₹1700
 
 */
 #include<stdio.h>
@@ -26,15 +29,7 @@ int main()
     scanf("%d",&units);
     int bill=0;
 
-    /*
-       Note: This IS a slab-wise calculation.
-       Each slab of units is charged at its own rate, and the bill is cumulative.
-
-       Example:
-      for first 100 units-> Rs5 per unit    i.e 5*units
-      for next 100 units -> Rs 9 per unit   i.e 5*100+(units-100)*9
-      for >200 -> Rs 16 per unit   i.e 5*100+6*100+(units-200)*16
-    */
+    
     if(units==0)
     {   
          bill=0;
@@ -43,10 +38,13 @@ int main()
     {   bill=units*5;
     }
     else if(units>100 && units<=200)
-    {   bill=100*5+(units-100)*9;
+    {   bill=100*5+(units-100)*7;
     }
-    else if(units>200)
-    {   bill=100*5+100*9+(units-200)*16;
+    else if(units>200 && units<=300)
+    {   bill=100*5+100*7+10*(units-200);
+    }
+    else if(units>300)
+    {   bill=100*5+100*7+100*10+(units-300)*12;
    }
    printf("Bill: Rs%d",bill);
    return 0;
