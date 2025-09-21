@@ -35,7 +35,7 @@ int main()
            temp=temp/10;
     }
 
-    int max_no=arr[digits-1]; // to store the number that appears max times
+    int max_no=arr[0]; // to store the number that appears max times
     int max_count=0;// to store the count of max number
     for(int i=0;i<digits;i++)
     {
