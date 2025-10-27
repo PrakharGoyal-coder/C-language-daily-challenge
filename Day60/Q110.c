@@ -34,7 +34,9 @@ int main()
         printf("Invalid value of k");
         return 0;
     }
+
     
+    printf("Maximum number in each subarray of size %d:",k);
     for(int i=0;i<=n-k;i++)
     {
        int max=arr[i];
