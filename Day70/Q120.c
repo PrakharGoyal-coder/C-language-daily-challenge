@@ -18,3 +18,30 @@ Output 3:
 We Are Going To Look At 26 Different Test Cases.
 
 */
+#include <stdio.h>
+#include <ctype.h>
+
+int main() 
+{
+    char str[200];
+
+    printf("Enter a string: ");
+    fgets(str,sizeof(str),stdin);
+
+    int i=0;
+    if ((str[0]>='A'&& str[0]<='Z')||(str[0]>='a'&& str[0]<='z'))
+     {
+        str[0]=toupper(str[0]);
+    }
+
+    // Capitalize each letter after a space
+    for (i=1;str[i]!='\0';i++)
+     {
+        if (str[i-1] ==' ' && isalpha(str[i])) 
+        {
+            str[i]=toupper(str[i]);
+        } 
+    }
+    printf("Output:%s",str);
+    return 0;
+}

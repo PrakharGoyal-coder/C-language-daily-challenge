@@ -1,4 +1,6 @@
-/*Q121: Write a C program that creates a text file named info.txt in write mode. The program should take the user’s name and age as input, and write them to the file using fprintf(). After writing, display a message confirming that the data was successfully saved.
+/*Q121: Write a C program that creates a text file named info.txt in write mode. 
+The program should take the user’s name and age as input, and write them to the file using fprintf(). 
+After writing, display a message confirming that the data was successfully saved.
 
 /*
 Sample Test Cases:
@@ -8,3 +10,26 @@ Output 1:
 File created successfully! Data written to info.txt
 
 */
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    FILE *fp;
+    fp=fopen("info.txt","w");
+    if(fp==NULL)
+    {printf("Error creating file!");
+       return 1;
+    }
+    char name[50];
+    int age;
+    printf("Enter your name:");
+    fgets(name,50,stdin);
+    name[strcspn(name,"\n")]='\0';
+    printf("Enter your age:");
+    scanf("%d",&age);
+    fprintf(fp,"Name:%s\nAge:%d\n",name,age);
+    fclose(fp);
+    printf("File created successfully! Data written to info.txt");
+
+
+}
